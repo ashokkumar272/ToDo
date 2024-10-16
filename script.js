@@ -54,6 +54,7 @@ function editTask(li, taskSpan) {
 
 function deleteTask(li) {
     li.style.textDecoration = "line-through";
+    deleteButton.style.backgroundColor = "black";
 }
 
 taskButton.addEventListener('click', function (e) {

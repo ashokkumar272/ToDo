@@ -2,7 +2,7 @@ const taskInput = document.getElementById('taskInput');
 const taskButton = document.getElementById('taskButton');
 const taskList = document.getElementById('taskList');
 
-function addTask() {
+const addTask = function() {
     const taskText = taskInput.value.trim(); 
     
     if (taskText === '') {

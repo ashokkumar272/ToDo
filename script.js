@@ -56,6 +56,7 @@ const addTask = function(text = '', completed = false) {
     markButton.addEventListener('click', () => markTask(taskSpan, markButton));
 
     saveListToLocalStorage();  // Save the updated list
+    checkForPendingTasks();
 };
 
 function markTask(x, y) {
@@ -82,6 +83,7 @@ function deleteTask(li) {
     liArray = liArray.filter(task => task !== li);  // Remove from the array
     li.remove();
     saveListToLocalStorage();  // Save the updated list
+    checkForPendingTasks();
 }
 
 
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     taskInput.focus();
+    checkForPendingTasks();
 });
 
 // Event listeners for menu interactions
@@ -140,3 +143,15 @@ taskButton.addEventListener('click', function (e) {
     e.preventDefault();
     addTask();
 });
+
+
+function checkForPendingTasks() {
+    if (liArray.length === 0) {
+        taskList.innerHTML = "<p class='emptyMsg'>No tasks pending....</p>";
+    } else {
+        const emptyMsg = taskList.querySelector('.emptyMsg');
+        if (emptyMsg) {
+            emptyMsg.remove();  // Remove the message if there are tasks
+        }
+    }
+}

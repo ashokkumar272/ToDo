@@ -7,17 +7,19 @@
     <title>iTodo</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_drop_down" />
 </head>
+
 <body>
-    
+
     <nav class="navbar">
         <div class="logo">iTodo</div>
         <div class="menu">
             <div id="signUp">Sign Up</div>
-            <!-- <div id="logIn">Login</div> -->
         </div>
     </nav>
-    
+
     <div class="main">
         <div class="addTask">
             <form action="" method="dialog" class="taskForm">
@@ -25,16 +27,35 @@
                 <button id="taskButton" class="addbtn">ADD</button>
             </form>
         </div>
-        
+        <div class="addTask2">
+            <button id="taskButton" class="addbtn">+</button>
+        </div>
+
         <div id="taskBox" class="taskbox">
-            <h2>Your Tasks</h2>
+            <div class="taskbox-navbar">
+                <div class="taskbox-title">Your Tasks</div>
+                <button id="taskbox-menubtn"><span class="material-symbols-outlined">
+                        arrow_drop_down
+                    </span></button>
+                    <button id="taskbox-savebtn">
+                        save
+                    </button>
+            </div>
+            
+            <div id="menulist">
+                <ol>
+                    <li id="all">All</li>
+                    <li id="completed">Completed</li>
+                    <li id="incomplete">Incomplete</li>
+                </ol>
+            </div>
             <ol id="taskList">
-                
+
             </ol>
         </div>
     </div>
-    
     <footer>@ All Rights Reserved.</footer>
+    
     <script src="script.js"></script>
 </body>
 

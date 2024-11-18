@@ -9,7 +9,8 @@ body {
     font-family: Arial, sans-serif;
     background-size: cover;
     color: #333;
-    /* height: 100vh; */
+    height: calc(100vh - 60px);
+    position: relative;
 }
 
 /* Navbar Styles */
@@ -50,30 +51,34 @@ body {
 
 
 /* Add Task Section */
-.addTask {
+.addTask{
     display: flex;
     justify-content: center;
     padding: 20px;
     border-bottom: 1px solid black;
     background-color: #2d3748d6;
+    position: static;
 }
 
-.addTask2{
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    padding: 30px;
-    z-index: 1;
+
+@media (orientation: portrait) {
+    .addTask {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #00000000;
+        opacity: 1;
+    }
 }
 
 .taskForm {
     display: flex;
     gap: 10px;
     width: 600px;
-    /* background-color: #333; */
 }
 
-#taskInput {
+.taskInput {
     width: 80%;
     padding: 10px 20px;
     font-size: 18px;
@@ -93,12 +98,6 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.addTask2 .addbtn{
-    height: 50px;
-    width: 50px;
-    display: none;
-    
-}
 .addbtn:hover {
     background-color: #3a9fde;
 }
@@ -115,7 +114,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* background-blend-mode: overlay; */
 }
 
 
@@ -152,9 +150,6 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    
-    /* gap: 10px; */
-
 }
 #menulist ol li{
     border-bottom: 1px solid grey;
@@ -169,8 +164,7 @@ body {
 #taskList {
     height: 100%;
     overflow-y: scroll;
-    background-color: white;
-    opacity: 0.7;
+    background-color: rgb(79, 142, 135);
     border-radius: 10px;
 }
 .emptyMsg{
@@ -180,12 +174,14 @@ body {
     display: none;
 }
 .taskItem{
+    background-color: white;
+    opacity: 1;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px;
     padding: 10px;
-    border: 1px solid black;
     border-radius: 8px;
     overflow: visible;
     
